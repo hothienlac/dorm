@@ -1,0 +1,28 @@
+{
+  "npmScope": "dorm",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "dorm": {
+      "tags": []
+    },
+    "dorm-e2e": {
+      "tags": [],
+      "implicitDependencies": ["dorm"]
+    },
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    }
+  }
+}
