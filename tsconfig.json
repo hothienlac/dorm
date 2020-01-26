@@ -16,7 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dorm/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@dorm/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@dorm/models": ["libs/models/src/index.ts"],
+			"@env-api/environment": ["apps/api/src/environments/environment.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
