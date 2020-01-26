@@ -7,7 +7,7 @@ import {
 } from '@nestjs/websockets';
 
 @WebSocketGateway()
-export class Websocket implements OnGatewayConnection, OnGatewayDisconnect {
+export class WebsocketGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
     @WebSocketServer() server;
     users: number = 0;

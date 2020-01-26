@@ -1,10 +1,6 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import * as bcrypt from 'bcrypt';
-import { get, post, Response } from 'request';
-import { JsonWebTokenError, sign, verify } from 'jsonwebtoken';
-import * as nodemailer from 'nodemailer';
 
-import { User, UserService } from '../user';
+import { User, UserService } from '../models';
 import { environment as env, environment } from '@env-api/environment';
 
 export enum Provider {

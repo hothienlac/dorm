@@ -23,19 +23,20 @@ import { ControllerModule } from './controller/controller.module';
 
 @Module({
   imports: [
-    AuthModule,
-    CoreModule,
-    SharedModule,
-    UserModule,
-    FingerPrintModule,
-    FreeTimeModule,
-    DefaultValueModule,
-    InOutHistoryModule,
-    RelationshipModule,
-    RequestModule,
-    RequestHistoryModule,
-    WebsocketModule,
-    ControllerModule],
+    // AuthModule,
+    // CoreModule,
+    // SharedModule,
+    // UserModule,
+    // FingerPrintModule,
+    // FreeTimeModule,
+    // DefaultValueModule,
+    // InOutHistoryModule,
+    // RelationshipModule,
+    // RequestModule,
+    // RequestHistoryModule,
+    // WebsocketModule,
+    // ControllerModule,
+  ],
   controllers: [AppController],
   providers: [AppService]
 })

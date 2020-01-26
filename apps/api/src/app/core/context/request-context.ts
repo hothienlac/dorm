@@ -4,7 +4,7 @@
 
 import { HttpException, HttpStatus } from '@nestjs/common';
 import * as cls from 'cls-hooked';
-import { User } from '@dorm/models';
+import { IUser } from '@dorm/models';
 
 export class RequestContext {
   readonly id: number;
@@ -36,12 +36,12 @@ export class RequestContext {
     return null;
   }
 
-  static currentUser(throwError?: boolean): User {
+  static currentUser(throwError?: boolean): IUser {
     const requestContext = RequestContext.currentRequestContext();
 
     if (requestContext) {
       // tslint:disable-next-line
-      const user: User = requestContext.request['user'];
+      const user: IUser = requestContext.request['user'];
       if (user) {
         return user;
       }
