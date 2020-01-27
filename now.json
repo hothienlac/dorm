@@ -11,7 +11,7 @@
     }],
     "builds": [{
       "src": "dist/apps/api/main.js",
-      "use": "@now/node"
+      "use": "@now/node-server"
     }]
   }
   
