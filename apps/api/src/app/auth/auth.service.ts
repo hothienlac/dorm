@@ -1,6 +1,6 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 
-import { User, UserService } from '../models';
+import { UserEntity, UserService } from '../models';
 import { environment as env, environment } from '@env-api/environment';
 
 export enum Provider {

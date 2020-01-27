@@ -16,7 +16,7 @@ import {
 } from 'class-validator';
 import { IRequestHistory } from '@dorm/models';
 
-@Entity('request-history')
+@Entity('request-history-entity')
 export class RequestHistory implements IRequestHistory {
 	@ApiPropertyOptional({ type: String })
 	@IsString()

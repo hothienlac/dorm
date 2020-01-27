@@ -15,8 +15,8 @@ import {
 } from 'class-validator';
 import { IUser, RolesEnum } from '@dorm/models';
 
-@Entity('user')
-export class User implements IUser {
+@Entity('user-entity')
+export class UserEntity implements IUser {
 	@ApiPropertyOptional({ type: String })
 	@IsString()
     @IsNotEmpty()
