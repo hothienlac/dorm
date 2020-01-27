@@ -1,9 +1,5 @@
 {
     "version": 2,
-    "name": "api",
-    "alias": [
-      "api"
-    ],
     "routes": [{
       "headers": {
         "Access-Control-Allow-Origin": "*",
