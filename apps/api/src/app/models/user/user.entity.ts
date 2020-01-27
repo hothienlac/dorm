@@ -7,7 +7,7 @@ import {
 	Entity,
 	Index,
 } from 'typeorm';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import {
 	IsNotEmpty,
 	IsString,
@@ -17,7 +17,7 @@ import { IUser, RolesEnum } from '@dorm/models';
 
 @Entity('user-entity')
 export class UserEntity implements IUser {
-	@ApiPropertyOptional({ type: String })
+	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()
 	@Index()

@@ -7,7 +7,7 @@ import {
 	Entity,
 	Index,
 } from 'typeorm';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import {
 	IsNotEmpty,
 	IsString,
@@ -16,7 +16,7 @@ import { IFingerPrint } from '@dorm/models';
 
 @Entity('finger-print')
 export class FingerPrint implements IFingerPrint {
-	@ApiPropertyOptional({ type: String })
+	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()
 	@Index()

@@ -7,7 +7,7 @@ import {
 	Entity,
 	Index,
 } from 'typeorm';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import {
 	IsNotEmpty,
     IsString,
@@ -17,21 +17,21 @@ import { IInOutHistory } from '@dorm/models';
 
 @Entity('in-out-history')
 export class InOutHistory implements IInOutHistory {
-	@ApiPropertyOptional({ type: String })
+	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()
 	@Index()
 	@Column()
     id: string;
     
-	@ApiPropertyOptional({ type: String })
+	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()
 	@Index()
 	@Column()
 	sid: string;
 
-	@ApiPropertyOptional({ type: Date })
+	@ApiProperty({ type: Date })
 	@IsDate()
     @IsNotEmpty()
 	@Index()

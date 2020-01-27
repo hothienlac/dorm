@@ -7,7 +7,7 @@ import {
 	Entity,
 	Index,
 } from 'typeorm';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import {
 	IsNotEmpty,
     IsString,
@@ -18,21 +18,21 @@ import { IRequestHistory } from '@dorm/models';
 
 @Entity('request-history-entity')
 export class RequestHistory implements IRequestHistory {
-	@ApiPropertyOptional({ type: String })
+	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()
 	@Index()
 	@Column()
     id: string;
     
-	@ApiPropertyOptional({ type: String })
+	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()
 	@Index()
 	@Column()
 	uid: string;
 
-	@ApiPropertyOptional({ type: Date })
+	@ApiProperty({ type: Date })
 	@IsDate()
     @IsNotEmpty()
 	@Index()
