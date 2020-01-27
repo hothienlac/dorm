@@ -12,10 +12,6 @@
       },
       "src": "dist/apps/api/.*",
       "dest": "dist/main.js"
-    }],
-    "builds": [{
-      "src": "dist/apps/api/main.js",
-      "use": "@now/node"
     }]
   }
   
