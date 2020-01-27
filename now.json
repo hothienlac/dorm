@@ -6,8 +6,8 @@
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
       },
-      "src": "dist/apps/api/main.js",
-      "dest": "dist/main.js"
+      "src": "/(.*)",
+      "dest": "dist/apps/api/main.js"
     }],
     "builds": [{
       "src": "dist/apps/api/main.js",
