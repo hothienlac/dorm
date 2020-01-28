@@ -1,5 +1,10 @@
 {
     "version": 2,
+    "alias": "dorm",
+    "builds": [{
+      "src": "dist/apps/api/main.js",
+      "use": "@now/node"
+    }],
     "routes": [{
       "headers": {
         "Access-Control-Allow-Origin": "*",
@@ -8,10 +13,6 @@
       },
       "src": "/(.*)",
       "dest": "dist/apps/api/main.js"
-    }],
-    "builds": [{
-      "src": "dist/apps/api/main.js",
-      "use": "@now/node"
     }]
   }
   
