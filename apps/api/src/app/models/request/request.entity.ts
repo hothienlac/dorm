@@ -16,8 +16,8 @@ import {
 } from 'class-validator';
 import { IRequest } from '@dorm/models';
 
-@Entity('request')
-export class Request implements IRequest {
+@Entity('request-entity')
+export class RequestEntity implements IRequest {
 	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()

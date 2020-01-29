@@ -3,18 +3,19 @@
     "alias": "dorm",
     "builds": [
       {
-        "src": "./dist/apps/api/main.js",
+        "src": "dist/apps/api/main.js",
         "use": "@now/node"
       }
     ],
-    "routes": [{
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
-      },
-      "src": "/(.*)",
-      "dest": "./dist/apps/api/main.js"
-    }]
+    "routes": [
+      {
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        "src": "/(.*)",
+        "dest": "dist/apps/api/main.js"
+      }
+    ]
   }
   

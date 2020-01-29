@@ -5,16 +5,16 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, InsertResult } from 'typeorm';
-import { Relationship } from './relationship.entity';
+import { RelationshipEntity } from './relationship.entity';
 import { CrudService } from '../crud/crud.service';
 
 @Injectable()
-export class RelationshipService extends CrudService<Relationship> {
-	constructor(@InjectRepository(Relationship) relationshipRepository: Repository<Relationship>) {
+export class RelationshipService extends CrudService<RelationshipEntity> {
+	constructor(@InjectRepository(RelationshipEntity) relationshipRepository: Repository<RelationshipEntity>) {
 		super(relationshipRepository);
 	}
 
-	async getRelationshipById(id: string): Promise<Relationship> {
+	async getRelationshipById(id: string): Promise<RelationshipEntity> {
 		const relationship = await this.repository
 			.createQueryBuilder('relationship')
 			.where('relationship.id = :id', { id })
@@ -30,7 +30,7 @@ export class RelationshipService extends CrudService<Relationship> {
 		return count > 0;
     }
     
-	async createOne(relationship: Relationship): Promise<InsertResult> {
+	async createOne(relationship: RelationshipEntity): Promise<InsertResult> {
 		return await this.repository.insert(relationship);
 	}
 }

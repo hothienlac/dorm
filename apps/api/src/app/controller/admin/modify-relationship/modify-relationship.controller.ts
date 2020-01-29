@@ -7,22 +7,22 @@ import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UUIDValidationPipe } from '../../../shared';
 import {
   CrudController,
-  Relationship,
+  RelationshipEntity,
   RelationshipService,
 } from '../../../models'
 
 @ApiTags('ModifyRelationship')
 @Controller('modify-relationship')
-export class ModifyRelationshipController extends CrudController<Relationship> {
+export class ModifyRelationshipController extends CrudController<RelationshipEntity> {
   constructor(private readonly relationshipService: RelationshipService) {
     super(relationshipService);
   }
 
   @ApiOperation({ summary: 'Find Relationship by id.' })
-  @ApiResponse({ status: HttpStatus.OK, description: 'Found one record', type: Relationship })
+  @ApiResponse({ status: HttpStatus.OK, description: 'Found one record', type: RelationshipEntity })
   @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Record not found' })
   @Get(':id')
-  async findById(@Param('id', UUIDValidationPipe) id: string): Promise<Relationship> {
+  async findById(@Param('id', UUIDValidationPipe) id: string): Promise<RelationshipEntity> {
     return this.relationshipService.findOne(id);
   }
 }

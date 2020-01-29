@@ -17,7 +17,7 @@ import {
 import { IRequestHistory } from '@dorm/models';
 
 @Entity('request-history-entity')
-export class RequestHistory implements IRequestHistory {
+export class RequestHistoryEntity implements IRequestHistory {
 	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()

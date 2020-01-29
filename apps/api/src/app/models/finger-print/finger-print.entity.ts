@@ -14,8 +14,8 @@ import {
 } from 'class-validator';
 import { IFingerPrint } from '@dorm/models';
 
-@Entity('finger-print')
-export class FingerPrint implements IFingerPrint {
+@Entity('finger-print-entity')
+export class FingerPrintEntity implements IFingerPrint {
 	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()

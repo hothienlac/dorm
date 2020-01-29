@@ -15,8 +15,8 @@ import {
 } from 'class-validator';
 import { IInOutHistory } from '@dorm/models';
 
-@Entity('in-out-history')
-export class InOutHistory implements IInOutHistory {
+@Entity('in-out-history-entity')
+export class InOutHistoryEntity implements IInOutHistory {
 	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()

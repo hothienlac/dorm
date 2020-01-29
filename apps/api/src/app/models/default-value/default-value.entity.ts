@@ -14,8 +14,8 @@ import {
 } from 'class-validator';
 import { IDefaultValue } from '@dorm/models';
 
-@Entity('default-value')
-export class DefaultValue implements IDefaultValue {
+@Entity('default-value-entity')
+export class DefaultValueEntity implements IDefaultValue {
 	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()

@@ -14,8 +14,8 @@ import {
 } from 'class-validator';
 import { IRelationship } from '@dorm/models';
 
-@Entity('relationship')
-export class Relationship implements IRelationship {
+@Entity('relationship-entity')
+export class RelationshipEntity implements IRelationship {
 	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()

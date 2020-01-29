@@ -14,8 +14,8 @@ import {
 } from 'class-validator';
 import { IFreeTime } from '@dorm/models';
 
-@Entity('free-time')
-export class FreeTime implements IFreeTime {
+@Entity('free-time-entity')
+export class FreeTimeEntity implements IFreeTime {
 	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()

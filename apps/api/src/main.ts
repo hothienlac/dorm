@@ -16,9 +16,9 @@ async function bootstrap() {
 	app.use(helmet());
 
 	const options = new DocumentBuilder()
-		.setTitle('Gauzy API')
-    .setVersion('1.0')
-		//.setBasePath('api/')
+		.setTitle('Dormitory API')
+    	.setVersion('1.0')
+		.setBasePath('api/')
 		.build();
 
 	const document = SwaggerModule.createDocument(app, options);
