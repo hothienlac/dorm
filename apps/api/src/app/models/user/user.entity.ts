@@ -6,6 +6,7 @@ import {
 	Column,
 	Entity,
 	Index,
+	PrimaryColumn,
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import {
@@ -21,7 +22,7 @@ export class UserEntity implements IUser {
 	@IsString()
     @IsNotEmpty()
 	@Index()
-	@Column()
+	@PrimaryColumn()
 	id: string;
 	
     @ApiProperty({ type: String, enum: RolesEnum })

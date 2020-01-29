@@ -6,6 +6,7 @@ import {
 	Column,
 	Entity,
 	Index,
+	PrimaryColumn,
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import {
@@ -20,7 +21,7 @@ export class FingerPrintEntity implements IFingerPrint {
 	@IsString()
     @IsNotEmpty()
 	@Index()
-	@Column()
+	@PrimaryColumn()
 	fid: string;
 	
     @ApiProperty({ type: String })

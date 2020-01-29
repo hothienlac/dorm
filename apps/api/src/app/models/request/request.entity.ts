@@ -6,6 +6,7 @@ import {
 	Column,
 	Entity,
 	Index,
+	PrimaryColumn,
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import {
@@ -22,7 +23,7 @@ export class RequestEntity implements IRequest {
 	@IsString()
     @IsNotEmpty()
 	@Index()
-	@Column()
+	@PrimaryColumn()
     id: string;
     
 	@ApiProperty({ type: String })
