@@ -25,7 +25,21 @@ import { AppRouting } from './app.routing';
 
 @Module({
   imports: [
-    RouterModule.forRoutes(AppRouting),
+    RouterModule.forRoutes([
+      {
+          path: '',
+          children: [
+              // {
+              //     path: '/auth',
+              //     module: AuthModule,
+              // },
+              {
+                  path: '/controller',
+                  module: ControllerModule,
+              },
+          ]
+      }
+  ]),
     // AuthModule,
     CoreModule,
     SharedModule,

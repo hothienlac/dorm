@@ -3,11 +3,7 @@ import { AdminController } from './admin.controller';
 import { ModifyUserController } from './modify-user/modify-user.controller';
 import { ModifyRelationshipController } from './modify-relationship/modify-relationship.controller';
 import { ModifyDefaultValueController } from './modify-default-value/modify-default-value.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import {
-  DefaultValueEntity,
-  UserEntity,
-  RelationshipEntity,
   DefaultValueModule,
   FingerPrintModule,
   FreeTimeModule,
@@ -20,11 +16,6 @@ import {
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([
-      UserEntity,
-      DefaultValueEntity,
-      RelationshipEntity,
-    ]),
     DefaultValueModule,
     FingerPrintModule,
     FreeTimeModule,
