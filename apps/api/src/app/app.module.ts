@@ -1,9 +1,7 @@
 import { Module } from '@nestjs/common';
-import { RouterModule } from 'nest-router';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -19,27 +17,9 @@ import {
 } from './models';
 import { WebsocketModule } from './websocket/websocket.module';
 import { ControllerModule } from './controller/controller.module';
-import { AppRouting } from './app.routing';
-
-
 
 @Module({
   imports: [
-    RouterModule.forRoutes([
-      {
-          path: '',
-          children: [
-              // {
-              //     path: '/auth',
-              //     module: AuthModule,
-              // },
-              {
-                  path: '/controller',
-                  module: ControllerModule,
-              },
-          ]
-      }
-  ]),
     // AuthModule,
     CoreModule,
     SharedModule,

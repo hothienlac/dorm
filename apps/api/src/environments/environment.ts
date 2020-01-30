@@ -36,12 +36,13 @@ export const environment: IEnvironment = {
 
 	database: databaseConfig,
 
-	googleConfig: {
-		clientId:
-			process.env.GoogleClientId ||
-			'1061129983046-pt4tnjteh9h1phfqapqkkea03iq0s351.apps.googleusercontent.com',
-		clientSecret:
-			process.env.GoogleClientSecret || 'liU5ihpwoqnsmXJNxNjFp1yP'
-  },
+	facebookConfig: {
+		loginDialogUri: 'https://www.facebook.com/v2.12/dialog/oauth',
+		accessTokenUri: 'https://graph.facebook.com/v2.12/oauth/access_token',
+		clientId: process.env.FacebookClientId || 'fakeclientid',
+		clientSecret: process.env.FacebookClientSecret || 'fakesecret',
+		oauthRedirectUri: `${process.env.host}:${process.env.port}/api/auth/facebook/callback`,
+		state: '{fbstate}'
+	},
   
 };

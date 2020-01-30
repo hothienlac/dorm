@@ -18,7 +18,7 @@ async function bootstrap() {
 	const options = new DocumentBuilder()
 		.setTitle('Dormitory API')
     	.setVersion('1.0')
-		.setBasePath('api/')
+		// .setBasePath('api/')
 		.build();
 
 	const document = SwaggerModule.createDocument(app, options);

@@ -12,7 +12,7 @@ import {
 } from '../../../models'
 
 @ApiTags('ModifyUser')
-@Controller('modify-user')
+@Controller('admin/modify-user')
 export class ModifyUserController extends CrudController<UserEntity> {
   constructor(private readonly userService: UserService) {
     super(userService);

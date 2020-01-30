@@ -7,28 +7,7 @@ import {
   SharedModule,
   StudentModule
 } from '.';
-import {
-  DefaultValueEntity,
-  FingerPrintEntity,
-  FreeTimeEntity,
-  InOutHistoryEntity,
-  RelationshipEntity,
-  RequestEntity,
-  RequestHistoryEntity,
-  UserEntity,
-} from '../models';
-import { TypeOrmModule } from '@nestjs/typeorm';
-
-const entities = [
-  DefaultValueEntity,
-  FingerPrintEntity,
-  FreeTimeEntity,
-  InOutHistoryEntity,
-  RelationshipEntity,
-  RequestEntity,
-  RequestHistoryEntity,
-  UserEntity,
-];
+import { ControllerController } from './controller.controller';
 
 @Module({
   imports: [
@@ -38,5 +17,6 @@ const entities = [
     FingerPrintModule,
     SharedModule,
   ],
+  // controllers: [ControllerController],
 })
 export class ControllerModule {}

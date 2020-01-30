@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Sumanth Chinthagunta
 
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { IGoogleConfig } from './iGoogleConfig';
+import { IFacebookConfig } from './IFacebookConfig';
 
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
@@ -32,7 +32,6 @@ export interface IEnvironment {
 
   database: TypeOrmModuleOptions;
 
-  googleConfig: IGoogleConfig;
-
+  facebookConfig: IFacebookConfig;
 }
 
