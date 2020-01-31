@@ -1,7 +1,7 @@
-import { Module } from '@nestjs/common';
-import { RequestService } from './request.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { RequestEntity } from './request.entity';
+import { Module } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { RequestEntity } from "./request.entity";
+import { RequestService } from "./request.service";
 
 @Module({
   imports: [

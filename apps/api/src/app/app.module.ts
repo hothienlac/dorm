@@ -1,22 +1,22 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
+import { CoreModule } from "./core/core.module";
+import { SharedModule } from "./shared/shared.module";
 
+import { ControllerModule } from "./controller/controller.module";
 import {
-  UserModule,
+  DefaultValueModule,
   FingerPrintModule,
   FreeTimeModule,
-  DefaultValueModule,
   InOutHistoryModule,
   RelationshipModule,
+  RequestHistoryModule,
   RequestModule,
-  RequestHistoryModule
-} from './models';
-import { WebsocketModule } from './websocket/websocket.module';
-import { ControllerModule } from './controller/controller.module';
+  UserModule,
+} from "./models";
+import { WebsocketModule } from "./websocket/websocket.module";
 
 @Module({
   imports: [
@@ -35,6 +35,6 @@ import { ControllerModule } from './controller/controller.module';
     ControllerModule,
   ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [AppService],
 })
 export class AppModule {}

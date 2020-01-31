@@ -1,13 +1,13 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 
 import {
   AdminModule,
   FingerPrintModule,
   ParentModule,
   SharedModule,
-  StudentModule
-} from '.';
-import { ControllerController } from './controller.controller';
+  StudentModule,
+} from ".";
+import { ControllerController } from "./controller.controller";
 
 @Module({
   imports: [

@@ -1,12 +1,12 @@
-// Modified code from https://github.com/xmlking/ngx-starter-kit. 
+// Modified code from https://github.com/xmlking/ngx-starter-kit.
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { Injectable, Logger } from '@nestjs/common';
-import { environment } from '@env-api/environment';
-import { IEnvironment } from '../../environments/ienvironment';
+import { environment } from "@env-api/environment";
+import { Injectable, Logger } from "@nestjs/common";
+import { IEnvironment } from "../../environments/ienvironment";
 
-const packageJson = require('../../../../../package.json');
+const packageJson = require("../../../../../package.json");
 
 @Injectable()
 export class ConfigService {
@@ -17,11 +17,11 @@ export class ConfigService {
     for (const [key, value] of Object.entries(environment.env)) {
       process.env[key] = value;
     }
-    
-    this.logger.log('Is Production: ' + environment.production);
+
+    this.logger.log("Is Production: " + environment.production);
 
     if (packageJson) {
-      this.logger.log('Package.json version: ' + packageJson.version)
+      this.logger.log("Package.json version: " + packageJson.version);
     }
   }
 
@@ -35,7 +35,7 @@ export class ConfigService {
         process.env.APP_VERSION = packageJson.version;
       }
     }
-    
+
     return process.env.APP_VERSION;
   }
 

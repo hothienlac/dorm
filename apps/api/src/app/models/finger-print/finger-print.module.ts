@@ -1,7 +1,7 @@
-import { Module } from '@nestjs/common';
-import { FingerPrintService } from './finger-print.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { FingerPrintEntity } from './finger-print.entity';
+import { Module } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { FingerPrintEntity } from "./finger-print.entity";
+import { FingerPrintService } from "./finger-print.service";
 
 @Module({
   imports: [

@@ -2,7 +2,9 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { BadRequestException, NotFoundException } from '@nestjs/common';
+import { BadRequestException, NotFoundException } from "@nestjs/common";
+import { of, throwError } from "rxjs";
+import { mergeMap } from "rxjs/operators";
 import {
 	DeepPartial,
 	DeleteResult,
@@ -11,12 +13,10 @@ import {
 	FindOneOptions,
 	Repository,
 	UpdateResult,
-} from 'typeorm';
-import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
-import { mergeMap } from 'rxjs/operators';
-import { of, throwError } from 'rxjs';
-import { ICrudService } from './icrud.service';
-import { IPagination } from './pagination';
+} from "typeorm";
+import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
+import { ICrudService } from "./icrud.service";
+import { IPagination } from "./pagination";
 
 export abstract class CrudService<T> implements ICrudService<T> {
 
@@ -35,7 +35,7 @@ export abstract class CrudService<T> implements ICrudService<T> {
 
 	public async findOne(
 		id: string | number | FindOneOptions<T> | FindConditions<T>,
-		options?: FindOneOptions<T>
+		options?: FindOneOptions<T>,
 	): Promise<T> {
 		const record = await this.repository.findOne(id as any, options);
 		if (!record) {
@@ -84,7 +84,7 @@ export abstract class CrudService<T> implements ICrudService<T> {
 	// public async checkIfExists(id: string): Promise<boolean> {
 	// 	return this.count(where()) > 0;
     // }
-    
+
 	// public async createOne(user: User): Promise<InsertResult> {
 	// 	return await this.repository.insert(user);
 	// }
@@ -99,12 +99,12 @@ export abstract class CrudService<T> implements ICrudService<T> {
 					if (!signal) {
 						return throwError(
 							new NotFoundException(
-								`The requested record was not found`
-							)
+								`The requested record was not found`,
+							),
 						);
 					}
 					return of(signal);
-				})
+				}),
 			);
 	}
 }

@@ -1,1 +1,1 @@
-export * from './parent.module'
+export * from "./parent.module";

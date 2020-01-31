@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { ModifyDefaultValueController } from './modify-default-value.controller';
+import { Test, TestingModule } from "@nestjs/testing";
+import { ModifyDefaultValueController } from "./modify-default-value.controller";
 
-describe('ModifyDefaultValue Controller', () => {
+describe("ModifyDefaultValue Controller", () => {
   let controller: ModifyDefaultValueController;
 
   beforeEach(async () => {
@@ -12,7 +12,7 @@ describe('ModifyDefaultValue Controller', () => {
     controller = module.get<ModifyDefaultValueController>(ModifyDefaultValueController);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(controller).toBeDefined();
   });
 });

@@ -1,10 +1,9 @@
-import { Module } from '@nestjs/common';
-import { AuthController } from './auth.controller';
-import { FacebookAuthController } from './facebook-auth/facebook-auth.controller';
+import { Module } from "@nestjs/common";
+import { AuthController } from "./auth.controller";
 
 @Module({
-  controllers: [AuthController, FacebookAuthController],
+  controllers: [AuthController],
   providers: [
-  ]
+  ],
 })
-export class AuthModule {}
+export class AuthModule { }

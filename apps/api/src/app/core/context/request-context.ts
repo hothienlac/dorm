@@ -1,10 +1,10 @@
-// Modified code from https://github.com/xmlking/ngx-starter-kit. 
+// Modified code from https://github.com/xmlking/ngx-starter-kit.
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { HttpException, HttpStatus } from '@nestjs/common';
-import * as cls from 'cls-hooked';
-import { IUser } from '@dorm/models';
+import { IUser } from "@dorm/models";
+import { HttpException, HttpStatus } from "@nestjs/common";
+import * as cls from "cls-hooked";
 
 export class RequestContext {
   readonly id: number;
@@ -48,7 +48,7 @@ export class RequestContext {
     }
 
     if (throwError) {
-      throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
+      throw new HttpException("Unauthorized", HttpStatus.UNAUTHORIZED);
     }
 
     return null;

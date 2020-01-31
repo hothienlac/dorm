@@ -2,37 +2,37 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
+import { IUser, RolesEnum } from "@dorm/models";
+import { ApiProperty } from "@nestjs/swagger";
 import {
-	Column,
-	Entity,
-	Index,
-	PrimaryColumn,
-} from 'typeorm';
-import { ApiProperty } from '@nestjs/swagger';
+    IsEnum,
+    IsNotEmpty,
+    IsString,
+} from "class-validator";
 import {
-	IsNotEmpty,
-	IsString,
-	IsEnum,
-} from 'class-validator';
-import { IUser, RolesEnum } from '@dorm/models';
+    Column,
+    Entity,
+    Index,
+    PrimaryColumn,
+} from "typeorm";
 
-@Entity('user-entity')
+@Entity("user-entity")
 export class UserEntity implements IUser {
-	@ApiProperty({ type: String })
-	@IsString()
+    @ApiProperty({ type: String })
+    @IsString()
     @IsNotEmpty()
-	@Index()
-	@PrimaryColumn()
-	id: string;
-	
+    @Index()
+    @PrimaryColumn()
+    id: string;
+
     @ApiProperty({ type: String, enum: RolesEnum })
-	@IsEnum(
-		RolesEnum,
-		{
-			message: `Role must be
-				${RolesEnum}`
-		}
-	)
+    @IsEnum(
+        RolesEnum,
+        {
+            message: `Role must be
+                ${RolesEnum}`,
+        },
+    )
     @IsNotEmpty()
     @Index()
     @Column()

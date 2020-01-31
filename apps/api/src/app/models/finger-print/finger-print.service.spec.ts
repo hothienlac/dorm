@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { FingerPrintService } from './finger-print.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { FingerPrintService } from "./finger-print.service";
 
-describe('FingerPrintService', () => {
+describe("FingerPrintService", () => {
   let service: FingerPrintService;
 
   beforeEach(async () => {
@@ -12,7 +12,7 @@ describe('FingerPrintService', () => {
     service = module.get<FingerPrintService>(FingerPrintService);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(service).toBeDefined();
   });
 });

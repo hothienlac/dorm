@@ -1,9 +1,9 @@
-// Code from https://github.com/xmlking/ngx-starter-kit. 
+// Code from https://github.com/xmlking/ngx-starter-kit.
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { ArgumentMetadata, Injectable, NotFoundException, PipeTransform } from '@nestjs/common';
-import { Validator } from 'class-validator';
+import { ArgumentMetadata, Injectable, NotFoundException, PipeTransform } from "@nestjs/common";
+import { Validator } from "class-validator";
 
 /**
  * UUID Validation Pipe

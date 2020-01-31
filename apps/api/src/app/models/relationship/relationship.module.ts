@@ -1,7 +1,7 @@
-import { Module } from '@nestjs/common';
-import { RelationshipService } from './relationship.service';
-import { RelationshipEntity } from './relationship.entity';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { Module } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { RelationshipEntity } from "./relationship.entity";
+import { RelationshipService } from "./relationship.service";
 
 @Module({
   imports: [

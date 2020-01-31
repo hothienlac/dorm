@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { WebsocketGateway } from './websocket.gateway';
+import { Test, TestingModule } from "@nestjs/testing";
+import { WebsocketGateway } from "./websocket.gateway";
 
-describe('WebsocketGateway', () => {
+describe("WebsocketGateway", () => {
   let gateway: WebsocketGateway;
 
   beforeEach(async () => {
@@ -12,7 +12,7 @@ describe('WebsocketGateway', () => {
     gateway = module.get<WebsocketGateway>(WebsocketGateway);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(gateway).toBeDefined();
   });
 });

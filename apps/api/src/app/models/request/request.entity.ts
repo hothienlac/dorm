@@ -2,22 +2,22 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
+import { IRequest } from "@dorm/models";
+import { ApiProperty } from "@nestjs/swagger";
+import {
+	IsBoolean,
+    IsDate,
+	IsNotEmpty,
+	IsString,
+} from "class-validator";
 import {
 	Column,
 	Entity,
 	Index,
 	PrimaryColumn,
-} from 'typeorm';
-import { ApiProperty } from '@nestjs/swagger';
-import {
-	IsNotEmpty,
-    IsString,
-	IsDate,
-	IsBoolean,
-} from 'class-validator';
-import { IRequest } from '@dorm/models';
+} from "typeorm";
 
-@Entity('request-entity')
+@Entity("request-entity")
 export class RequestEntity implements IRequest {
 	@ApiProperty({ type: String })
 	@IsString()
@@ -25,7 +25,7 @@ export class RequestEntity implements IRequest {
 	@Index()
 	@PrimaryColumn()
     id: string;
-    
+
 	@ApiProperty({ type: String })
 	@IsString()
     @IsNotEmpty()
@@ -39,21 +39,21 @@ export class RequestEntity implements IRequest {
 	@Index()
 	@Column()
 	in: Date;
-	
+
     @ApiProperty({ type: Date })
 	@IsDate()
     @IsNotEmpty()
     @Index()
     @Column()
 	out: Date;
-	
+
 	@ApiProperty({ type: Boolean })
 	@IsBoolean()
     @IsNotEmpty()
     @Index()
     @Column()
     parent_active: boolean;
-	
+
 	@ApiProperty({ type: Boolean })
 	@IsBoolean()
     @IsNotEmpty()
