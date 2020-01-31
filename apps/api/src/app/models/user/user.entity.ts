@@ -26,7 +26,13 @@ export class UserEntity implements IUser {
 	id: string;
 	
     @ApiProperty({ type: String, enum: RolesEnum })
-    @IsEnum(RolesEnum)
+	@IsEnum(
+		RolesEnum,
+		{
+			message: `Role must be
+				${RolesEnum}`
+		}
+	)
     @IsNotEmpty()
     @Index()
     @Column()
