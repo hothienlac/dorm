@@ -7,10 +7,31 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { InsertResult, Repository } from 'typeorm';
 import { CrudService } from '../crud/crud.service';
 import { UserEntity } from './user.entity';
+import { IJwtToken } from '@dorm/models';
 
 @Injectable()
 export class UserService extends CrudService<UserEntity> {
-	constructor(@InjectRepository(UserEntity) userRepository: Repository<UserEntity>) {
+	constructor(
+		@InjectRepository(UserEntity)
+		private readonly userRepository: Repository<UserEntity>
+		) {
 		super(userRepository);
+		}
+
+	async getLoggedUserOrCreate(token: IJwtToken): Promise<UserEntity> {
+		const { email, preferred_username } = token;
+		// const user = await this.userRepository.findOne({email});
+		const user = await this.userRepository.findOne({ username: preferred_username });
+		if (user) {
+		  return user;
+		} else {
+			const newUser = {
+				firstName: token.given_name,
+				lastName: token.family_name,
+				email: token.email,
+				username: token.preferred_username,
+			};
+			return super.create(newUser);
+		}
 	}
 }

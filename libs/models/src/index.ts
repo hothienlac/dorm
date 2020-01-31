@@ -6,3 +6,7 @@ export * from './lib/in-out-history.model';
 export * from './lib/relationship.model';
 export * from './lib/request.model';
 export * from './lib/request-history.model';
+export * from './lib/jwt-token.model';
+
+export * from './lib/roles.enum';
+export * from './lib/gender.enum';

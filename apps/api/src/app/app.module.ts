@@ -17,6 +17,8 @@ import {
   UserModule,
 } from './models';
 import { WebsocketModule } from './websocket/websocket.module';
+import { TerminusModule } from '@nestjs/terminus';
+import { AppHealthService } from './app-health.service';
 
 @Module({
   imports: [
@@ -33,6 +35,9 @@ import { WebsocketModule } from './websocket/websocket.module';
     RequestHistoryModule,
     WebsocketModule,
     ControllerModule,
+    TerminusModule.forRootAsync({
+      useClass: AppHealthService,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],

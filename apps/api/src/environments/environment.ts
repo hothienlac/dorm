@@ -31,12 +31,35 @@ export const environment: IEnvironment = {
 
     env: {
         LOG_LEVEL: 'debug',
+        NODE_TLS_REJECT_UNAUTHORIZED: '0',
     },
+
+    ALLOW_WHITE_LIST: ['::ffff:127.0.0.1', '::1'],
 
     USER_PASSWORD_BCRYPT_SALT_ROUNDS: 12,
     JWT_SECRET: 'secretKey',
 
     database: databaseConfig,
+
+    auth: {
+        clientId: 'ngxapi',
+        // issuerExternalUrl: 'https://keycloak.traefik.k8s/auth/realms/ngx',
+        issuerExternalUrl: 'http://localhost:8080/auth/realms/ngx',
+        // issuerExternalUrl: 'https://keycloak.kashmora.com/auth/realms/ngx',
+        // additionalQueryStringParams:  { scope: 'openid profile email', nonce: '1234578910' }
+    },
+
+    email: {
+        transport: {
+        host: 'mail.google.com',
+        port: 25,
+        // secure: false
+        },
+        defaults: {
+        from: '"sumo demo" <sumo@demo.com>',
+        },
+        templateDir: 'apps/api/src/assets/email-templates',
+    },
 
     facebookConfig: {
         loginDialogUri: 'https://www.facebook.com/v2.12/dialog/oauth',

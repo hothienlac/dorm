@@ -3,12 +3,11 @@
 // Copyright (c) 2018 Sumanth Chinthagunta
 
 export interface IUser {
-	id: string; // USE PHONE NUMBER AS ID
+	id: string;
 	role: string;
-}
-
-export enum RolesEnum {
-	ADMIN = 'ADMIN',
-	STUDENT = ' STUDENT',
-	PARENT = 'PARENT',
+	username: string;
+	email: string;
+	phone: string;
+	gender: string;
+	avatar: string; // FROM IMAGE MODEL
 }
