@@ -1,3 +1,3 @@
-import { SetMetadata } from "@nestjs/common";
+import { SetMetadata } from '@nestjs/common';
 
-export const Claims = (...claims: string[]) => SetMetadata("claims", claims);
+export const Claims = (...claims: string[]) => SetMetadata('claims', claims);

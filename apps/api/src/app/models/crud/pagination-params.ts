@@ -2,13 +2,13 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { ApiProperty } from "@nestjs/swagger";
-import { Transform } from "class-transformer";
-import { IsOptional, Max, Min } from "class-validator";
+import { ApiProperty } from '@nestjs/swagger';
+import { Transform } from 'class-transformer';
+import { IsOptional, Max, Min } from 'class-validator';
 
 export enum OrderType {
-  DESC = "DESC",
-  ASC = "ASC",
+  DESC = 'DESC',
+  ASC = 'ASC',
 }
 
 /**

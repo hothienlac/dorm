@@ -2,9 +2,9 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { BadRequestException, NotFoundException } from "@nestjs/common";
-import { of, throwError } from "rxjs";
-import { mergeMap } from "rxjs/operators";
+import { BadRequestException, NotFoundException } from '@nestjs/common';
+import { of, throwError } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 import {
 	DeepPartial,
 	DeleteResult,
@@ -13,10 +13,10 @@ import {
 	FindOneOptions,
 	Repository,
 	UpdateResult,
-} from "typeorm";
-import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
-import { ICrudService } from "./icrud.service";
-import { IPagination } from "./pagination";
+} from 'typeorm';
+import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
+import { ICrudService } from './icrud.service';
+import { IPagination } from './pagination';
 
 export abstract class CrudService<T> implements ICrudService<T> {
 

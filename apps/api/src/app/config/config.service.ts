@@ -2,11 +2,11 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { environment } from "@env-api/environment";
-import { Injectable, Logger } from "@nestjs/common";
-import { IEnvironment } from "../../environments/ienvironment";
+import { environment } from '@env-api/environment';
+import { Injectable, Logger } from '@nestjs/common';
+import { IEnvironment } from '../../environments/ienvironment';
 
-const packageJson = require("../../../../../package.json");
+const packageJson = require('../../../../../package.json');
 
 @Injectable()
 export class ConfigService {
@@ -18,10 +18,10 @@ export class ConfigService {
       process.env[key] = value;
     }
 
-    this.logger.log("Is Production: " + environment.production);
+    this.logger.log('Is Production: ' + environment.production);
 
     if (packageJson) {
-      this.logger.log("Package.json version: " + packageJson.version);
+      this.logger.log('Package.json version: ' + packageJson.version);
     }
   }
 

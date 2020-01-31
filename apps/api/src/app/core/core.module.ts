@@ -1,7 +1,7 @@
-import { environment as env } from "@env-api/environment";
-import { Module } from "@nestjs/common";
-import { TypeOrmModule, TypeOrmModuleOptions } from "@nestjs/typeorm";
-import { ConfigModule, ConfigService } from "../config";
+import { environment as env } from '@env-api/environment';
+import { Module } from '@nestjs/common';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '../config';
 import {
   DefaultValueEntity,
   FingerPrintEntity,
@@ -11,8 +11,8 @@ import {
   RequestEntity,
   RequestHistoryEntity,
   UserEntity,
-} from "../models";
-import { CoreService } from "./core.service";
+} from '../models';
+import { CoreService } from './core.service';
 
 const entities = [
   DefaultValueEntity,

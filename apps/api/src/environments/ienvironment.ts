@@ -2,10 +2,10 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { TypeOrmModuleOptions } from "@nestjs/typeorm";
-import { IFacebookConfig } from "./IFacebookConfig";
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { IFacebookConfig } from './IFacebookConfig';
 
-export type LogLevel = "debug" | "info" | "warn" | "error";
+export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
 /**
  * environment variables that goes into process.env

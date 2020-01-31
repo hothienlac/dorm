@@ -1,7 +1,7 @@
-import { Module } from "@nestjs/common";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { DefaultValueEntity } from "./default-value.entity";
-import { DefaultValueService } from "./default-value.service";
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { DefaultValueEntity } from './default-value.entity';
+import { DefaultValueService } from './default-value.service';
 
 @Module({
   imports: [

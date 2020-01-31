@@ -1,4 +1,4 @@
-import { Module } from "@nestjs/common";
+import { Module } from '@nestjs/common';
 
 import {
   AdminModule,
@@ -6,8 +6,8 @@ import {
   ParentModule,
   SharedModule,
   StudentModule,
-} from ".";
-import { ControllerController } from "./controller.controller";
+} from '.';
+import { ControllerController } from './controller.controller';
 
 @Module({
   imports: [

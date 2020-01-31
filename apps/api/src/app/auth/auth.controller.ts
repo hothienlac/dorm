@@ -1,4 +1,4 @@
-import { Controller } from "@nestjs/common";
+import { Controller } from '@nestjs/common';
 
-@Controller("auth/facebook")
+@Controller('auth/facebook')
 export class AuthController {}

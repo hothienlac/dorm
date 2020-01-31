@@ -2,22 +2,22 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { IRequestHistory } from "@dorm/models";
-import { ApiProperty } from "@nestjs/swagger";
+import { IRequestHistory } from '@dorm/models';
+import { ApiProperty } from '@nestjs/swagger';
 import {
 	IsBoolean,
     IsDate,
 	IsNotEmpty,
 	IsString,
-} from "class-validator";
+} from 'class-validator';
 import {
 	Column,
 	Entity,
 	Index,
 	PrimaryColumn,
-} from "typeorm";
+} from 'typeorm';
 
-@Entity("request-history-entity")
+@Entity('request-history-entity')
 export class RequestHistoryEntity implements IRequestHistory {
 	@ApiProperty({ type: String })
 	@IsString()

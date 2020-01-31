@@ -1,4 +1,4 @@
-import { Module } from "@nestjs/common";
+import { Module } from '@nestjs/common';
 import {
   DefaultValueModule,
   FingerPrintModule,
@@ -8,11 +8,11 @@ import {
   RequestHistoryModule,
   RequestModule,
   UserModule,
-} from "../../models";
-import { AdminController } from "./admin.controller";
-import { ModifyDefaultValueController } from "./modify-default-value/modify-default-value.controller";
-import { ModifyRelationshipController } from "./modify-relationship/modify-relationship.controller";
-import { ModifyUserController } from "./modify-user/modify-user.controller";
+} from '../../models';
+import { AdminController } from './admin.controller';
+import { ModifyDefaultValueController } from './modify-default-value/modify-default-value.controller';
+import { ModifyRelationshipController } from './modify-relationship/modify-relationship.controller';
+import { ModifyUserController } from './modify-user/modify-user.controller';
 
 @Module({
   imports: [

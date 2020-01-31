@@ -1,4 +1,4 @@
-import { Controller } from "@nestjs/common";
+import { Controller } from '@nestjs/common';
 
-@Controller("modify-default-value")
+@Controller('modify-default-value')
 export class ModifyDefaultValueController {}

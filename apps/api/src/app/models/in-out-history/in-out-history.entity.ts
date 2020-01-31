@@ -2,21 +2,21 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { IInOutHistory } from "@dorm/models";
-import { ApiProperty } from "@nestjs/swagger";
+import { IInOutHistory } from '@dorm/models';
+import { ApiProperty } from '@nestjs/swagger';
 import {
 	IsDate,
     IsNotEmpty,
     IsString,
-} from "class-validator";
+} from 'class-validator';
 import {
 	Column,
 	Entity,
 	Index,
 	PrimaryColumn,
-} from "typeorm";
+} from 'typeorm';
 
-@Entity("in-out-history-entity")
+@Entity('in-out-history-entity')
 export class InOutHistoryEntity implements IInOutHistory {
 	@ApiProperty({ type: String })
 	@IsString()

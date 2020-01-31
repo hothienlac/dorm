@@ -4,7 +4,7 @@ import {
   SubscribeMessage,
   WebSocketGateway,
   WebSocketServer,
-} from "@nestjs/websockets";
+} from '@nestjs/websockets';
 
 @WebSocketGateway()
 export class WebsocketGateway implements OnGatewayConnection, OnGatewayDisconnect {
@@ -18,7 +18,7 @@ export class WebsocketGateway implements OnGatewayConnection, OnGatewayDisconnec
         this.users++;
 
         // Notify connected clients of current users
-        this.server.emit("users", this.users);
+        this.server.emit('users', this.users);
 
     }
 
@@ -28,13 +28,13 @@ export class WebsocketGateway implements OnGatewayConnection, OnGatewayDisconnec
         this.users--;
 
         // Notify connected clients of current users
-        this.server.emit("users", this.users);
+        this.server.emit('users', this.users);
 
     }
 
-    @SubscribeMessage("chat")
+    @SubscribeMessage('chat')
     async onChat(client, message) {
-        client.broadcast.emit("chat", message);
+        client.broadcast.emit('chat', message);
     }
 
 }

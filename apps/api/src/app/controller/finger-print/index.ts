@@ -1,1 +1,1 @@
-export * from "./finger-print.module";
+export * from './finger-print.module';

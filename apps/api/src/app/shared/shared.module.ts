@@ -1,5 +1,5 @@
-import { Module } from "@nestjs/common";
-import { UUIDValidationPipe } from "./pipes/uuid-validation.pipe";
+import { Module } from '@nestjs/common';
+import { UUIDValidationPipe } from './pipes/uuid-validation.pipe';
 
 @Module({
   imports: [],
