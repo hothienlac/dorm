@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../app.module';
 import { cli } from 'cli-ux';
-import { UserService } from '../user';
+import { UserService } from '../models';
 
 /**
  * Create admin account using command line interface
@@ -21,8 +21,6 @@ const main = async () => {
     cli.action.start('creating an admin');
 
     await app.get(UserService).create({
-      firstName,
-      lastName,
       email,
       username,
     });

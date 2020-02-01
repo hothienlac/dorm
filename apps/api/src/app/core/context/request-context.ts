@@ -53,5 +53,19 @@ export class RequestContext {
 
     return null;
   }
+  
+  static currentToken(throwError?: boolean): any {
+    const requestContext = RequestContext.currentRequestContext();
+
+    if (requestContext) {
+      // tslint:disable-next-line
+      return requestContext.request['token'];
+    }
+
+    if (throwError) {
+      throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
+    }
+    return null;
+  }
 
 }

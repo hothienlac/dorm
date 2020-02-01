@@ -9,5 +9,5 @@ export interface IUser {
 	email: string;
 	phone: string;
 	gender: string;
-	avatar: string; // FROM IMAGE MODEL
+	avatar: string; // url to image
 }

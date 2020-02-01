@@ -1,7 +1,12 @@
 import { join } from 'path';
 import { renderFile } from 'pug';
 import { Inject, Injectable } from '@nestjs/common';
-import { createTransport, SentMessageInfo, Transporter, SendMailOptions } from 'nodemailer';
+import {
+  createTransport,
+  SentMessageInfo,
+  Transporter,
+  SendMailOptions,
+} from 'nodemailer';
 import { EmailModuleOptions } from './interfaces/email-options.interface';
 
 interface EmailTemplate {
@@ -16,7 +21,8 @@ export class EmailService {
   constructor(@Inject('EMAIL_CONFIG') private readonly mailerConfig: EmailModuleOptions) {
     if (!mailerConfig.transport || Object.keys(mailerConfig.transport).length < 1) {
       throw new Error(
-        'Make sure to provide a nodemailer transport configuration object, connection url or a transport plugin instance',
+        `Make sure to provide a nodemailer transport configuration object,
+        connection url or a transport plugin instance`,
       );
     }
 
