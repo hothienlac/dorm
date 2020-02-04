@@ -18,7 +18,7 @@ export class UserService extends CrudService<UserEntity> {
 		super(userRepository);
 		}
 
-	async getLoggedUserOrCreate(token: IJwtToken): Promise<UserEntity> {
+	async getLoggedUserOrCreate(token: IJwtToken): Promise<UserEntity | InsertResult> {
 		const { email, preferred_username } = token;
 		// const user = await this.userRepository.findOne({email});
 		const user = await this.userRepository.findOne({ username: preferred_username });

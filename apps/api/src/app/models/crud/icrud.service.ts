@@ -2,7 +2,15 @@
 // MIT License, see https://github.com/xmlking/ngx-starter-kit/blob/develop/LICENSE
 // Copyright (c) 2018 Sumanth Chinthagunta
 
-import { DeepPartial, DeleteResult, FindConditions, FindManyOptions, FindOneOptions, UpdateResult } from 'typeorm';
+import {
+  DeepPartial,
+  DeleteResult,
+  FindConditions,
+  FindManyOptions,
+  FindOneOptions,
+  UpdateResult,
+  InsertResult,
+} from 'typeorm';
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 import { IPagination } from './pagination';
 
@@ -10,7 +18,7 @@ export interface ICrudService<T> {
   count(filter?: FindManyOptions<T>): Promise<number>;
   findAll(filter?: FindManyOptions<T>): Promise<IPagination<T>>;
   findOne(id: string | number | FindOneOptions<T> | FindConditions<T>, options?: FindOneOptions<T>): Promise<T>;
-  create(entity: DeepPartial<T>, ...options: any[]): Promise<T>;
+  create(entity: DeepPartial<T>, ...options: any[]): Promise<InsertResult>;
   update(id: any, entity: QueryDeepPartialEntity<T>, ...options: any[]): Promise<UpdateResult | T>;
   delete(id: any, ...options: any[]): Promise<DeleteResult>;
 }

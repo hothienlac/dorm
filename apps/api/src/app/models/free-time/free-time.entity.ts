@@ -5,42 +5,30 @@
 import { IFreeTime } from '@dorm/models';
 import { ApiProperty } from '@nestjs/swagger';
 import {
-	IsNotEmpty,
-	IsString,
-} from 'class-validator';
-import {
 	Column,
 	Entity,
 	Index,
-	PrimaryColumn,
+	PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity('free-time-entity')
 export class FreeTimeEntity implements IFreeTime {
 	@ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
 	@Index()
-	@PrimaryColumn()
+	@PrimaryGeneratedColumn('uuid')
 	id: string;
 
 	@ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
 	@Index()
 	@Column()
 	sid: string;
 
     @ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
     @Index()
     @Column()
     begin: string;
 
     @ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
     @Index()
     @Column()
     end: string;

@@ -5,44 +5,30 @@
 import { IRequestHistory } from '@dorm/models';
 import { ApiProperty } from '@nestjs/swagger';
 import {
-	IsBoolean,
-    IsDate,
-	IsNotEmpty,
-	IsString,
-} from 'class-validator';
-import {
 	Column,
 	Entity,
 	Index,
-	PrimaryColumn,
+	PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity('request-history-entity')
 export class RequestHistoryEntity implements IRequestHistory {
 	@ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
 	@Index()
-	@PrimaryColumn()
+	@PrimaryGeneratedColumn('uuid')
     id: string;
 
 	@ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
 	@Index()
 	@Column()
 	uid: string;
 
 	@ApiProperty({ type: Date })
-	@IsDate()
-    @IsNotEmpty()
 	@Index()
 	@Column()
 	time: Date;
 
 	@ApiProperty({ type: Boolean })
-	@IsBoolean()
-    @IsNotEmpty()
     @Index()
     @Column()
     active: boolean;

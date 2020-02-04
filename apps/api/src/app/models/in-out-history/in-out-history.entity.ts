@@ -5,43 +5,30 @@
 import { IInOutHistory } from '@dorm/models';
 import { ApiProperty } from '@nestjs/swagger';
 import {
-	IsDate,
-    IsNotEmpty,
-    IsString,
-} from 'class-validator';
-import {
 	Column,
 	Entity,
 	Index,
-	PrimaryColumn,
+	PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity('in-out-history-entity')
 export class InOutHistoryEntity implements IInOutHistory {
 	@ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
 	@Index()
-	@PrimaryColumn()
+	@PrimaryGeneratedColumn('uuid')
     id: string;
 
 	@ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
 	@Index()
 	@Column()
 	sid: string;
 
 	@ApiProperty({ type: Date })
-	@IsDate()
-    @IsNotEmpty()
 	@Index()
 	@Column()
 	in: Date;
 
     @ApiProperty({ type: Date })
-	@IsDate()
-    @IsNotEmpty()
     @Index()
     @Column()
     out: Date;

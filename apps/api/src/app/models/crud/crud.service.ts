@@ -13,10 +13,12 @@ import {
 	FindOneOptions,
 	Repository,
 	UpdateResult,
+	InsertResult,
 } from 'typeorm';
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 import { ICrudService } from './icrud.service';
 import { IPagination } from './pagination';
+import { validate } from 'class-validator';
 
 export abstract class CrudService<T> implements ICrudService<T> {
 
@@ -27,7 +29,7 @@ export abstract class CrudService<T> implements ICrudService<T> {
 		return await this.repository.count(filter);
 	}
 
-	public async findAll(filter?: FindManyOptions<T>): Promise<IPagination<T>> {
+	public async findAll(filter: FindConditions<T>): Promise<IPagination<T>> {
 		const total = await this.repository.count(filter);
 		const items = await this.repository.find(filter);
 		return { items, total };
@@ -44,11 +46,11 @@ export abstract class CrudService<T> implements ICrudService<T> {
 		return record;
 	}
 
-	public async create(entity: DeepPartial<T>, ...options: any[]): Promise<T> {
+	public async create(entity: DeepPartial<T>, ...options: any[]): Promise<InsertResult> {
 		const obj = this.repository.create(entity);
 		try {
 			// https://github.com/Microsoft/TypeScript/issues/21592
-			return await this.repository.save(obj as any);
+			return await this.repository.insert(obj);
 		} catch (err /*: WriteError*/) {
 			throw new BadRequestException(err);
 		}

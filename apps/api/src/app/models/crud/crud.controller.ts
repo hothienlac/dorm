@@ -13,7 +13,7 @@ import {
 	Put,
 } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { DeepPartial } from 'typeorm';
+import { DeepPartial, InsertResult } from 'typeorm';
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 import { ICrudService } from './icrud.service';
 import { IPagination } from './pagination';
@@ -24,6 +24,8 @@ import { PaginationParams } from './pagination-params';
 export abstract class CrudController<T> {
 	protected constructor(private readonly crudService: ICrudService<T>) {}
 
+	/////////////////////////////////////////////////////////////////////////////
+
 	@ApiOperation({ summary: 'find all' })
 	@ApiResponse({
 		status: HttpStatus.OK,
@@ -33,6 +35,8 @@ export abstract class CrudController<T> {
 	async findAll(filter?: PaginationParams<T>): Promise<IPagination<T>> {
 		return this.crudService.findAll(filter);
 	}
+
+	/////////////////////////////////////////////////////////////////////////////
 
 	@ApiOperation({ summary: 'Create new record' })
 	@ApiResponse({
@@ -49,9 +53,11 @@ export abstract class CrudController<T> {
 	async create(
 		@Body() entity: DeepPartial<T>,
 		...options: any[]
-	): Promise<T> {
+	): Promise<InsertResult> {
 		return this.crudService.create(entity);
 	}
+
+	/////////////////////////////////////////////////////////////////////////////
 
 	@ApiOperation({ summary: 'Update an existing record' })
 	@ApiResponse({
@@ -76,6 +82,8 @@ export abstract class CrudController<T> {
 	): Promise<any> {
 		return this.crudService.update(id, entity); // FIXME: https://github.com/typeorm/typeorm/issues/1544
 	}
+
+	/////////////////////////////////////////////////////////////////////////////
 
 	@ApiOperation({ summary: 'Delete record' })
 	@ApiResponse({

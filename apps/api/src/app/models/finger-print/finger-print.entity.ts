@@ -5,28 +5,20 @@
 import { IFingerPrint } from '@dorm/models';
 import { ApiProperty } from '@nestjs/swagger';
 import {
-	IsNotEmpty,
-	IsString,
-} from 'class-validator';
-import {
 	Column,
 	Entity,
 	Index,
-	PrimaryColumn,
+	PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity('finger-print-entity')
 export class FingerPrintEntity implements IFingerPrint {
 	@ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
 	@Index()
-	@PrimaryColumn()
+	@PrimaryGeneratedColumn('uuid')
 	fid: string;
 
     @ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
     @Index()
     @Column()
     uid: string;

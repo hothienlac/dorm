@@ -5,28 +5,20 @@
 import { IDefaultValue } from '@dorm/models';
 import { ApiProperty } from '@nestjs/swagger';
 import {
-	IsNotEmpty,
-	IsString,
-} from 'class-validator';
-import {
 	Column,
 	Entity,
 	Index,
-	PrimaryColumn,
+	PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity('default-value-entity')
 export class DefaultValueEntity implements IDefaultValue {
 	@ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
 	@Index()
-	@PrimaryColumn()
+	@PrimaryGeneratedColumn('uuid')
 	key: string;
 
     @ApiProperty({ type: String })
-	@IsString()
-    @IsNotEmpty()
     @Index()
     @Column()
     value: string;
