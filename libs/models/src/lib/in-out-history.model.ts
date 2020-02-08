@@ -1,6 +1,8 @@
+import { IUser } from './user.model';
+
 export interface IInOutHistory {
     id: string;
-    sid: string;
+    user: IUser;
     out: Date;
     in: Date;
 }

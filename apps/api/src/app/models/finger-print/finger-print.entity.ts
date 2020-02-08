@@ -9,7 +9,9 @@ import {
 	Entity,
 	Index,
 	PrimaryGeneratedColumn,
+	ManyToOne,
 } from 'typeorm';
+import { UserEntity } from '../user/user.entity';
 
 @Entity('finger-print-entity')
 export class FingerPrintEntity implements IFingerPrint {
@@ -20,6 +22,6 @@ export class FingerPrintEntity implements IFingerPrint {
 
     @ApiProperty({ type: String })
     @Index()
-    @Column()
-    uid: string;
+    @ManyToOne(type => UserEntity)
+    user: UserEntity;
 }

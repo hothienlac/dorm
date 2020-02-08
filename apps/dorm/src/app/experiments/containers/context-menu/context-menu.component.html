@@ -1,0 +1,15 @@
+<ngx-breadcrumbs title="Experiments" [crumbs]="crumbs"></ngx-breadcrumbs>
+<mat-card>
+  <mat-list role="list">
+    <mat-list-item [contextMenu]="myContextMenu">Right click me to see the menu 1</mat-list-item>
+    <mat-list-item [contextMenu]="myContextMenu">Right click me to see the menu 2</mat-list-item>
+    <mat-list-item [contextMenu]="myContextMenu">Right click me to see the menu 3</mat-list-item>
+  </mat-list>
+</mat-card>
+<ng-template #myContextMenu>
+  <context-menu>
+    <button mat-button>Select all</button> <button mat-button>Edit Row</button> <button mat-button>Quick tag</button>
+    <button mat-button>Copy selected column</button> <button mat-button>Copy selected row</button>
+    <button mat-button>Delete</button>
+  </context-menu>
+</ng-template>

@@ -1,6 +1,8 @@
+import { IUser } from './user.model';
+
 export interface IRequestHistory {
     id: string;
-    uid: string;
+    user: IUser;
     time: Date;
     active: boolean;
 }

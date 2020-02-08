@@ -1,6 +1,8 @@
+import { IUser } from './user.model';
+
 export interface IRequest {
     id: string;
-    sid: string;
+    user: IUser;
     in: Date;
     out: Date;
     parent_active: boolean;

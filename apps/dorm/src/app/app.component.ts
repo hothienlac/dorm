@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Message } from '@dorm/api-interfaces';
 
 @Component({
-  selector: 'dorm-root',
+  selector: 'ngx-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

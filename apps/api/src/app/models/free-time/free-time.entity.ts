@@ -10,6 +10,7 @@ import {
 	Index,
 	PrimaryGeneratedColumn,
 } from 'typeorm';
+import { UserEntity } from '../user/user.entity';
 
 @Entity('free-time-entity')
 export class FreeTimeEntity implements IFreeTime {
@@ -18,18 +19,13 @@ export class FreeTimeEntity implements IFreeTime {
 	@PrimaryGeneratedColumn('uuid')
 	id: string;
 
-	@ApiProperty({ type: String })
-	@Index()
-	@Column()
-	sid: string;
-
-    @ApiProperty({ type: String })
+    @ApiProperty({ type: Number })
     @Index()
     @Column()
-    begin: string;
+    begin: number;
 
-    @ApiProperty({ type: String })
+    @ApiProperty({ type: Number })
     @Index()
     @Column()
-    end: string;
+    end: number;
 }

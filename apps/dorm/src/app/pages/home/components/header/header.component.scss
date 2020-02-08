@@ -1,0 +1,36 @@
+:host {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+mat-toolbar {
+  height: 56px !important;
+  min-height: 56px !important;
+
+  mat-toolbar-row {
+    height: 56px !important;
+  }
+}
+
+mat-nav-list {
+  padding-top: 0;
+}
+
+.default-angular-logo {
+  height: 26px;
+  margin: 0 4px 3px 0;
+  vertical-align: middle;
+}
+
+.default-menu-icon {
+  font-size: 36px;
+}
+
+:host ::ng-deep theme-picker {
+  .mat-icon-button {
+    margin-left: 50px;
+  }
+}

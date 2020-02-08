@@ -1,0 +1,54 @@
+//Ref: https://github.com/angular/material.angular.io/blob/master/src/_app-theme.scss
+@import '~@angular/material/theming';
+
+@import './app/theme/sidenav/components/menu-item/menu-item.component.scss-theme';
+@import './app/pages/home/containers/landing/landing.component.scss-theme';
+@import './app/pages/home/containers/about/about.component.scss-theme';
+@import './app/pages/home/components/footer/footer.component.scss-theme';
+@import './app/pages/home/components/header/header.component.scss-theme';
+@import './app/theme/breadcrumbs/breadcrumbs.component-theme';
+@import './app/theme/toolbar/toolbar.component.scss-theme';
+@import './app/theme/sidenav/sidenav.component.scss-theme';
+@import './app/theme/chat-box/chat-box.component.scss-theme';
+@import './app/theme/grid/containers/accounts-grid-list/accounts-grid-list.component.scss-theme';
+
+@import './styles/global.scss-theme';
+@import './styles/svg-theme';
+
+//@import './styles/tables-theme';
+
+// Styles for the default app that are based on the current theme.
+@mixin custom-components-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-app-background {
+    background: mat-color($background, background);
+  }
+
+  .default-primary-header {
+    background: mat-color($primary);
+
+    h1 {
+      color: mat-color($primary, default-contrast);
+    }
+  }
+
+  @include ngx-site-svg-theme($theme);
+  //@include default-site-tables-theme($theme);
+  @include ngx-footer-component-theme($theme);
+  @include ngx-landing-component-theme($theme);
+  @include ngx-header-component-theme($theme);
+
+  @include ngx-about-component-theme($theme);
+  @include ngx-breadcrumbs-component-theme($theme);
+  @include ngx-toolbar-component-theme($theme);
+  @include ngx-sidenav-component-theme($theme);
+  @include ngx-chat-box-component-theme($theme);
+  @include ngx-accounts-grid-list-component-theme($theme);
+
+  @include ngx-global-theme($theme);
+}

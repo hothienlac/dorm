@@ -21,8 +21,38 @@
             "polyfills": "apps/dorm/src/polyfills.ts",
             "tsConfig": "apps/dorm/tsconfig.app.json",
             "aot": false,
-            "assets": ["apps/dorm/src/favicon.ico", "apps/dorm/src/assets"],
-            "styles": ["apps/dorm/src/styles.scss"],
+            "assets": [
+              "apps/dorm/src/assets",
+              "apps/dorm/src/favicon.ico",
+              "apps/dorm/src/manifest.json",
+              "apps/dorm/src/silent-refresh.html"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["apps/dorm/src/styles"]
+            },
+            "styles": [
+              "apps/dorm/src/styles.scss",
+              {
+                "bundleName": "assets/themes/deeppurple-amber",
+                "input": "apps/dorm/src/styles/themes/deeppurple-amber.scss",
+                "inject": false
+              },
+              {
+                "bundleName": "assets/themes/indigo-pink",
+                "input": "apps/dorm/src/styles/themes/indigo-pink.scss",
+                "inject": false
+              },
+              {
+                "bundleName": "assets/themes/pink-bluegrey",
+                "input": "apps/dorm/src/styles/themes/pink-bluegrey.scss",
+                "inject": false
+              },
+              {
+                "bundleName": "assets/themes/purple-green",
+                "input": "apps/dorm/src/styles/themes/purple-green.scss",
+                "inject": false
+              }
+            ],
             "scripts": []
           },
           "configurations": {

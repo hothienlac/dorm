@@ -1,0 +1,25 @@
+@import 'constants';
+
+/* PRE LOADER
+-------------------------------------------------- */
+@import '~loaders.css/src/animations/line-scale';
+@import '~loaders.css/src/animations/line-scale-pulse-out';
+
+.loader {
+  //background: $auxiliary;
+  background: $loader_bg;
+  display: table;
+  height: 100%;
+  max-width: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 99999;
+
+  .loader-inner {
+    backface-visibility: hidden;
+    display: table-cell;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

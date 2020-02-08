@@ -29,6 +29,8 @@ export * from './request-history/request-history.entity';
 export * from './user/user.module';
 export * from './user/user.service';
 export * from './user/user.entity';
+export * from './user/image.entity';
+export * from './user/profile.entity';
 
 export * from './crud/crud.controller';
 export * from './crud/crud.service';

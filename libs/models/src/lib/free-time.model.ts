@@ -1,6 +1,7 @@
+import { IUser } from './user.model';
+
 export interface IFreeTime {
     id: string;
-    sid: string;
-    begin: string;
-    end: string;
+    begin: number;
+    end: number;
 }

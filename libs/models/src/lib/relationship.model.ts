@@ -1,5 +1,7 @@
+import { IUser } from './user.model';
+
 export interface IRelationship {
     id: string;
-    sid: string;
-    pid: string;
+    student: IUser;
+    parent: IUser;
 }

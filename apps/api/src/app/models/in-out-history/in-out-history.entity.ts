@@ -18,10 +18,12 @@ export class InOutHistoryEntity implements IInOutHistory {
 	@PrimaryGeneratedColumn('uuid')
     id: string;
 
-	@ApiProperty({ type: String })
-	@Index()
-	@Column()
-	sid: string;
+	@ManyToOne(
+		type => UserEntity,
+		user => user.images,
+		{ onDelete: 'CASCADE', nullable: false },
+	)
+	user: UserEntity;
 
 	@ApiProperty({ type: Date })
 	@Index()

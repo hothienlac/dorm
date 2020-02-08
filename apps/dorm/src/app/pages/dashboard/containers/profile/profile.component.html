@@ -1,0 +1,9 @@
+<ngx-breadcrumbs title="Overview" [crumbs]="crumbs"></ngx-breadcrumbs>
+
+<div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutGap="60px grid">
+  <ngx-app-profile
+    [oidcProfile]="oidcProfile$ | async"
+    [appProfile]="appProfile$ | async"
+    fxFlex="60%"
+  ></ngx-app-profile>
+</div>

@@ -7,7 +7,7 @@ export enum RolesEnum {
 
 export enum UserRolesEnum {
 	ADMIN = 'ADMIN',
-	STUDENT = ' STUDENT',
+	STUDENT = 'STUDENT',
 	PARENT = 'PARENT',
 	FINGER_PRINT = 'FINGER_PRINT',
 }

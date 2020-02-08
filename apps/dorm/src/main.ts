@@ -1,13 +1,20 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
+import { environment } from '@env-dorm/environment';
+// import { enableDebugTools, disableDebugTools } from '@angular/platform-browser';
 import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
+  // disableDebugTools();
 }
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .catch((err) => console.error(err));
+  // Profile Change Detection
+  // .then(ref => {
+  //   const applicationRef = ref.injector.get(ApplicationRef);
+  //   const appComponent = applicationRef.components[0];
+  //   enableDebugTools(appComponent);
+  // })
+  .catch(err => console.error(err));

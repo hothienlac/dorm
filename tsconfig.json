@@ -12,14 +12,29 @@
     "target": "es2015",
     "module": "esnext",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "lib": ["es2019", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "resolveJsonModule": true,
     "paths": {
       "@dorm/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@dorm/models": ["libs/models/src/index.ts"],
-			"@env-api/environment": ["apps/api/src/environments/environment.ts"]
+			"@env-api/environment": ["apps/api/src/environments/environment.ts"],
+			"@env-dorm/environment": ["apps/dorm/src/environments/environment.ts"],
+      "@env-dorm/ienvironment": ["apps/dorm/src/environments/ienvironment.ts"],
+      "@app/@animations": ["apps/dorm/src/app/@animations/index.ts"],
+      "@app/@core": ["apps/dorm/src/app/@core/index.ts"],
+      "@app/@utils": ["apps/dorm/src/app/@utils/index.ts"],
+      "@app/@websocket": ["apps/dorm/src/app/@websocket/index.ts"],
+      "@app/admin": ["apps/dorm/src/app/admin/index.ts"],
+      "@app/auth": ["apps/dorm/src/app/auth/index.ts"],
+      "@app/navigator": ["apps/dorm/src/app/navigator/index.ts"],
+      "@app/theme": ["apps/dorm/src/app/theme/index.ts"],
+      "@app/theme-picker": ["apps/dorm/src/app/theme-picker/index.ts"],
+      "@app/shared": ["apps/dorm/src/app/shared/index.ts"],
+      "@app/pages": ["apps/dorm/src/app/pages/index.ts"],
+      "@app/svg-viewer": ["apps/dorm/src/app/svg-viewer/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
