@@ -10,11 +10,13 @@ import { IInOutHistory } from './in-out-history.model';
 
 export interface IUser {
   id?: string;
-  role: UserRolesEnum;
-  email: string;
-  free_time?: IFreeTime;
-  in_out_history: IInOutHistory;
   username: string;
+  email: string;
+  role: UserRolesEnum;
+  free_time?: IFreeTime;
+  in_out_history?: IInOutHistory[];
+  parents?: IUser[];
+  children?: IUser[];
   images?: IImage[];
   profile?: IProfile;
 }

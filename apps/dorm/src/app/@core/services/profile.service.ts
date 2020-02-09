@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IUser } from '@dorm/models';
+import { IProfile } from '@dorm/models';
 import { environment } from '@env-dorm/environment';
 import { catchError } from 'rxjs/operators';
 import { EMPTY, throwError } from 'rxjs';
@@ -16,7 +16,7 @@ export class ProfileService {
   constructor(private httpClient: HttpClient) {}
 
   getMyProfile() {
-    return this.httpClient.get<IUser>(`${this.baseUrl}/${this.entityPath}/myprofile`).pipe(
+    return this.httpClient.get<IProfile>(`${this.baseUrl}/${this.entityPath}/myprofile`).pipe(
       retryWithBackoff(1000, 3),
       catchError(error => {
         this.handleError(error);
@@ -26,22 +26,22 @@ export class ProfileService {
     );
   }
 
-  create(entity: Partial<IUser>) {
+  create(entity: Partial<IProfile>) {
     // const uploadData = new FormData();
     // uploadData.append('email', this.yourForm.get('email').value);
     // uploadData.append('file', this.yourForm.get('file').value);
 
     return this.httpClient
-      .post<IUser>(`${this.baseUrl}/${this.entityPath}`, entity, {
+      .post<IProfile>(`${this.baseUrl}/${this.entityPath}`, entity, {
         reportProgress: true,
         observe: 'events',
       })
       .pipe(catchError(this.handleError));
   }
 
-  update(id: number | string, entity: Partial<IUser>) {
+  update(id: number | string, entity: Partial<IProfile>) {
     return this.httpClient
-      .patch<IUser>(`${this.baseUrl}/${this.entityPath}/${id}`, entity, {
+      .patch<IProfile>(`${this.baseUrl}/${this.entityPath}/${id}`, entity, {
         reportProgress: true,
         observe: 'events',
       })

@@ -1,6 +1,6 @@
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IUser } from '@dorm/models';
+import { IProfile } from '@dorm/models';
 import { Action, NgxsAfterBootstrap, Selector, State, StateContext } from '@ngxs/store';
 import { patch } from '@ngxs/store/operators';
 import { throwError } from 'rxjs';
@@ -9,23 +9,23 @@ import { ProfileService } from '../services/profile.service';
 import { finishedLoading, setProgress, startLoading } from './state.operators';
 
 export class FetchProfile {
-  static readonly type = '[IUser] Fetch';
+  static readonly type = '[IProfile] Fetch';
 }
 export class CreateProfile {
-  public static readonly type = '[IUser] Create';
-  constructor(public payload: IUser) {}
+  public static readonly type = '[IProfile] Create';
+  constructor(public payload: IProfile) {}
 }
 export class UpdateProfile {
-  public static readonly type = '[IUser] Update';
-  constructor(public payload: { id: number | string; profile: IUser }) {}
+  public static readonly type = '[IProfile] Update';
+  constructor(public payload: { id: number | string; profile: IProfile }) {}
 }
 export class DeleteProfile {
-  static readonly type = '[IUser] Delete';
+  static readonly type = '[IProfile] Delete';
   constructor(public payload: number | string) {}
 }
 
 export interface ProfileStateModel {
-  profile?: IUser;
+  profile?: IProfile;
   error?: string;
   loading?: boolean;
   progress?: number;
@@ -93,7 +93,7 @@ export class ProfileState implements NgxsAfterBootstrap {
         complete: () => console.log('competed request!')
       }),
       last(),
-      tap((profile: IUser) => ctx.setState(patch({ profile }))),
+      tap((profile: IProfile) => ctx.setState(patch({ profile }))),
       catchError(error => {
         ctx.setState(patch({ error }));
         return throwError(error);
@@ -113,7 +113,7 @@ export class ProfileState implements NgxsAfterBootstrap {
         complete: () => console.log('competed request!')
       }),
       last(),
-      tap((profile: IUser) => ctx.setState(patch({ profile }))),
+      tap((profile: IProfile) => ctx.setState(patch({ profile }))),
       catchError(error => {
         ctx.setState(patch({ error }));
         return throwError(error);
@@ -154,7 +154,7 @@ export class ProfileState implements NgxsAfterBootstrap {
         return `Files are ${status}% downloaded`;
 
       case HttpEventType.Response:
-        return (event as HttpResponse<IUser>).body; // `Done`;
+        return (event as HttpResponse<IProfile>).body; // `Done`;
 
       default:
         return `Something went wrong`;

@@ -9,14 +9,29 @@ import {
 	Entity,
 	Index,
 	PrimaryGeneratedColumn,
+	ManyToOne,
 } from 'typeorm';
+import { RequestEntity, UserEntity } from '../';
 
-@Entity('request-history-entity')
+@Entity('request-history')
 export class RequestHistoryEntity implements IRequestHistory {
 	@ApiProperty({ type: String })
 	@Index()
 	@PrimaryGeneratedColumn('uuid')
     id: string;
+	
+	@ManyToOne(
+		type => RequestEntity,
+		x => x.history,
+		{ onDelete: 'CASCADE', nullable: false },
+	)
+	request: RequestEntity;
+
+	@ManyToOne(
+		type => UserEntity,
+		{ onDelete: 'CASCADE', nullable: false },
+	)
+	user: UserEntity;
 
 	@ApiProperty({ type: String })
 	@Index()
@@ -27,9 +42,9 @@ export class RequestHistoryEntity implements IRequestHistory {
 	@Index()
 	@Column()
 	time: Date;
-
+	
 	@ApiProperty({ type: Boolean })
     @Index()
     @Column()
-    active: boolean;
+	active: boolean;
 }

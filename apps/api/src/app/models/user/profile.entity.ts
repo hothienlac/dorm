@@ -10,11 +10,15 @@ import {
   OneToOne,
   UpdateDateColumn,
   VersionColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
-import { ImageEntity } from './image.entity';
+import { ImageEntity } from '../';
 
 @Entity('profile')
 export class ProfileEntity implements IProfile {
+  @PrimaryGeneratedColumn('uuid')
+  id?: string;
+  
   @OneToOne(_ => ImageEntity, { cascade: ['insert', 'update'], eager: true, nullable: true, onDelete: 'SET NULL' })
   @JoinColumn()
   avatar?: ImageEntity;
@@ -27,11 +31,11 @@ export class ProfileEntity implements IProfile {
   mobilePhone?: string;
 
   @ApiProperty({ type: 'string', format: 'date-time', example: '2018-11-21T06:20:32.232Z' })
-  @CreateDateColumn({ type: 'timestamptz' })
+  @CreateDateColumn({ type: 'datetime' })
   createdAt?: Date;
 
   @ApiProperty({ type: 'string', format: 'date-time', example: '2018-11-21T06:20:32.232Z' })
-  @UpdateDateColumn({ type: 'timestamptz' })
+  @UpdateDateColumn({ type: 'datetime' })
   updatedAt?: Date;
 
   @Exclude()

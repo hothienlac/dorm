@@ -7,22 +7,24 @@ import {
   FingerPrintEntity,
   FreeTimeEntity,
   InOutHistoryEntity,
-  RelationshipEntity,
   RequestEntity,
   RequestHistoryEntity,
   UserEntity,
+  ImageEntity,
+  ProfileEntity,
 } from '../models';
 import { CoreService } from './core.service';
 
 const entities = [
   DefaultValueEntity,
+  UserEntity,
   FingerPrintEntity,
   FreeTimeEntity,
   InOutHistoryEntity,
-  RelationshipEntity,
   RequestEntity,
   RequestHistoryEntity,
-  UserEntity,
+  ImageEntity,
+  ProfileEntity,
 ];
 
 @Module({

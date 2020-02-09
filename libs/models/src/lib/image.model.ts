@@ -6,7 +6,6 @@ export interface IImage {
   title: string;
   type: ImageTypeEnum;
   user: IUser;
-  createdAt?: Date;
   data?: Buffer;
   checksum?: string;
   mimeType?: string;

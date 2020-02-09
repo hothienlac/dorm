@@ -11,17 +11,17 @@ import {
 	PrimaryGeneratedColumn,
 	ManyToOne,
 } from 'typeorm';
-import { UserEntity } from '../user/user.entity';
+import { UserEntity } from '../';
 
-@Entity('finger-print-entity')
+@Entity('finger-print')
 export class FingerPrintEntity implements IFingerPrint {
 	@ApiProperty({ type: String })
 	@Index()
 	@PrimaryGeneratedColumn('uuid')
 	fid: string;
 
-    @ApiProperty({ type: String })
-    @Index()
-    @ManyToOne(type => UserEntity)
-    user: UserEntity;
+    @ManyToOne(
+		type => UserEntity
+	)
+	user: UserEntity;
 }

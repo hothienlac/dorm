@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Gender, Profile } from '@ngx-starter-kit/models';
+import { GenderEnum, IProfile } from '@dorm/models';
 
 // TODO: https://netbasal.com/how-to-implement-file-uploading-in-angular-reactive-forms-89a3fffa1a03
 @Component({
@@ -19,9 +19,9 @@ import { Gender, Profile } from '@ngx-starter-kit/models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppProfileComponent implements OnInit, OnDestroy {
-  readonly genderOptions = Gender;
+  readonly genderOptions = GenderEnum;
   @Input() oidcProfile: any;
-  @Input() appProfile: Profile;
+  @Input() appProfile: IProfile;
   imagePath = this.sanitizer.bypassSecurityTrustResourceUrl('assets/img/avatars/noavatar.png');
   editing = false;
   hasAvatar = true;

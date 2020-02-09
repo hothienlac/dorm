@@ -2,11 +2,20 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IImage, ImageTypeEnum } from '@dorm/models';
 import { Transform } from 'class-transformer';
 import { IsEnum, IsOptional, Length, MaxLength } from 'class-validator';
-import { Column, CreateDateColumn, Entity, ManyToOne } from 'typeorm';
-import { UserEntity } from './user.entity';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { UserEntity } from '../';
 
 @Entity('image')
 export class ImageEntity implements IImage {
+  @PrimaryGeneratedColumn('uuid')
+  id?: string;
+  
   @Length(1, 100)
   @Column({ length: 100 })
   title: string;
@@ -22,13 +31,9 @@ export class ImageEntity implements IImage {
   )
   user: UserEntity;
 
-  @ApiProperty({ type: 'string', format: 'date-time', example: '2018-11-21T06:20:32.232Z' })
-  @CreateDateColumn({ type: 'timestamptz' })
-  createdAt?: Date;
-
   @IsOptional()
   @Transform(value => value.toString('base64'), { toPlainOnly: true })
-  @Column({ type: 'bytea', nullable: true })
+  @Column({ type: 'blob', nullable: true })
   data?: Buffer;
 
   @IsOptional()

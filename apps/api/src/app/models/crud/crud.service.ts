@@ -29,7 +29,7 @@ export abstract class CrudService<T> implements ICrudService<T> {
 		return await this.repository.count(filter);
 	}
 
-	public async findAll(filter: FindConditions<T>): Promise<IPagination<T>> {
+	public async findAll(filter: FindManyOptions<T>): Promise<IPagination<T>> {
 		const total = await this.repository.count(filter);
 		const items = await this.repository.find(filter);
 		return { items, total };

@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material';
 import { AuthState } from '@app/auth';
 import { Crumb } from '@app/theme';
 import { ProfileState } from '@app/@core';
-import { IUser } from '@dorm/models';
+import { IProfile } from '@dorm/models';
 import { Select } from '@ngxs/store';
 import { AutoUnsubscribe } from 'ngx-auto-unsubscribe';
 import { Observable } from 'rxjs';
@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   crumbs: ReadonlyArray<Crumb> = [{ name: 'Dashboard', link: '/dashboard' }, { name: 'Profile' }];
 
   @Select(AuthState.profile) oidcProfile$: Observable<any>;
-  @Select(ProfileState.profile) appProfile$: Observable<IUser>;
+  @Select(ProfileState.profile) appProfile$: Observable<IProfile>;
   @Select(ProfileState.loading) loading$: Observable<boolean>;
   @Select(ProfileState.error) error$: Observable<string>;
   constructor(private snackBar: MatSnackBar) {}

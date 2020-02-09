@@ -9,9 +9,11 @@ import {
 	Entity,
 	Index,
 	PrimaryGeneratedColumn,
+	ManyToOne,
 } from 'typeorm';
+import { UserEntity } from '../';
 
-@Entity('in-out-history-entity')
+@Entity('in-out-history')
 export class InOutHistoryEntity implements IInOutHistory {
 	@ApiProperty({ type: String })
 	@Index()
@@ -20,7 +22,7 @@ export class InOutHistoryEntity implements IInOutHistory {
 
 	@ManyToOne(
 		type => UserEntity,
-		user => user.images,
+		user => user.in_out_history,
 		{ onDelete: 'CASCADE', nullable: false },
 	)
 	user: UserEntity;

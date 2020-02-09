@@ -10,9 +10,8 @@ import {
 	Index,
 	PrimaryGeneratedColumn,
 } from 'typeorm';
-import { UserEntity } from '../user/user.entity';
 
-@Entity('free-time-entity')
+@Entity('free-time')
 export class FreeTimeEntity implements IFreeTime {
 	@ApiProperty({ type: String })
 	@Index()

@@ -89,9 +89,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "vendorChunk": false,
           "options": {
-            "browserTarget": "dorm:build",
-            "proxyConfig": "apps/dorm/proxy.conf.json"
+            "browserTarget": "dorm:build"
           },
           "configurations": {
             "production": {

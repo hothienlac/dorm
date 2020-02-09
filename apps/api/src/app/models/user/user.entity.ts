@@ -14,10 +14,12 @@ import {
   VersionColumn,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { ImageEntity } from './image.entity';
-import { ProfileEntity } from './profile.entity';
-import { FreeTimeEntity } from '../free-time/free-time.entity';
-import { InOutHistoryEntity } from '../in-out-history/in-out-history.entity';
+import {
+  ImageEntity,
+  ProfileEntity,
+  FreeTimeEntity,
+  InOutHistoryEntity,
+} from '../';
 
 @Entity('user')
 export class UserEntity implements IUser {
@@ -43,14 +45,6 @@ export class UserEntity implements IUser {
   @Column()
   username: string;
 
-  @ApiProperty({ type: 'string', format: 'date-time', example: '2018-11-21T06:20:32.232Z' })
-  @CreateDateColumn({ type: 'timestamptz' })
-  createdAt?: Date;
-
-  @ApiProperty({ type: 'string', format: 'date-time', example: '2018-11-21T06:20:32.232Z' })
-  @UpdateDateColumn({ type: 'timestamptz' })
-  updatedAt?: Date;
-
   @VersionColumn()
   version?: number;
 
@@ -66,7 +60,17 @@ export class UserEntity implements IUser {
   )
   in_out_history?: InOutHistoryEntity[];
 
-  in_out_history
+  @OneToMany(
+    _ => UserEntity,
+    x => x.children
+  )
+  parents?: UserEntity[];
+
+  @OneToMany(
+    _ => UserEntity,
+    x => x.parents
+  )
+  children?: UserEntity[];
 
   // FIXME: OneToOne downward cascade delete not implemented
   @OneToOne(type => ProfileEntity, { cascade: ['insert', 'remove'], nullable: true, onDelete: 'SET NULL' })
