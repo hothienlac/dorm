@@ -9,7 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { ThemePickerModule } from '@app/theme-picker';
-import { NotificationsModule } from '@app/theme';
+import { NotificationsModule } from '../notifications/notifications.module';
 
 import { ToolbarComponent } from './toolbar.component';
 import { SearchComponent } from './components/search/search.component';

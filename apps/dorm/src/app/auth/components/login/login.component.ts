@@ -22,59 +22,21 @@ export class LoginComponent {
   loginForm: FormGroup;
 
   constructor(
-    fb: FormBuilder,
     private store: Store,
-    private cd: ChangeDetectorRef,
     private oauthService: OAuthService,
-    private ropcService: ROPCService,
     @Inject(MAT_DIALOG_DATA) public data: { infoMsg: string },
     public dialogRef: MatDialogRef<LoginComponent>,
   ) {
     if (data) {
       this.infoMsg = data.infoMsg;
     }
-    this.loginForm = fb.group({
-      username: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      rememberMe: false,
-    });
-  }
-
-  toggleInputType() {
-    if (this.visible) {
-      this.inputType = 'password';
-      this.visible = false;
-      this.cd.markForCheck();
-    } else {
-      this.inputType = 'text';
-      this.visible = true;
-      this.cd.markForCheck();
-    }
   }
 
   initSSO() {
-    this.store.dispatch(new ChangeAuthMode(AuthMode.ImplicitFLow /* HINT: AuthMode.CodeFLow*/)).subscribe(() => {
-      this.oauthService.initLoginFlow();
-      console.log('initSSO');
-    });
-  }
-
-  onSubmit(values) {
-    if (this.loginForm.invalid) {
-      return;
-    }
-
-    this.store.dispatch(new ChangeAuthMode(AuthMode.PasswordFlow)).subscribe(async () => {
-      try {
-        const profile = await this.ropcService.login(values.username, values.password);
-        this.dialogRef.close(profile);
-      } catch (error /*: HttpErrorResponse*/) {
-        if (error.error && error.error.error_description !== undefined) {
-          this.errorMsg = error.error.error_description; // 'The user credentials is incorrect';
-        } else {
-          this.errorMsg = 'Login Failed';
-        }
-      }
-    });
+    this.store.dispatch(new ChangeAuthMode(AuthMode.ImplicitFLow /* HINT: AuthMode.CodeFLow*/))
+      .subscribe(() => {
+        this.oauthService.initLoginFlow();
+        console.log('initSSO');
+      });
   }
 }

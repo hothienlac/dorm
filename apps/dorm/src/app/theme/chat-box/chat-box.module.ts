@@ -20,9 +20,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { DraggableModule } from '@app/theme';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { LedModule } from '@app/theme';
+import { DraggableModule } from '../draggable/draggable.module';
+import { LedModule } from '../led/led.module';
 
 import { NlpService } from './services/nlp.service';
 import { ChatService } from './services/chat.service';

@@ -16,7 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { RouterModule } from '@angular/router';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { ScrollbarModule } from '@app/theme';
+import { ScrollbarModule } from '../scrollbar/scrollbar.module';
 
 @NgModule({
   imports: [

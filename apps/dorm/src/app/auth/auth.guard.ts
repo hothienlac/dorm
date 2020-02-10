@@ -9,19 +9,16 @@ import { Login } from './auth.actions';
 export class AuthGuard implements CanActivate {
   constructor(private oauthService: OAuthService, private store: Store) {}
 
-  async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+  async canActivate(
+      route: ActivatedRouteSnapshot,
+      state: RouterStateSnapshot,
+    ): Promise<boolean> {
     if (this.oauthService.hasValidIdToken() || this.oauthService.hasValidAccessToken()) {
       return true;
     } else {
-      // await waitUntil(_ => (<any>window).loginTryed === true);
-
-      if (this.oauthService.hasValidIdToken() || this.oauthService.hasValidAccessToken()) {
-        return true;
-      } else {
-        this.store.dispatch(new Login({ infoMsg: 'Please login to Enter' }));
-        // TODO return router.parseUrl('/notauthorized');
-        return false;
-      }
+      this.store.dispatch(new Login({ infoMsg: 'Please login to Enter' }));
+      // TODO return router.parseUrl('/notauthorized');
+      return false;
     }
   }
 }
