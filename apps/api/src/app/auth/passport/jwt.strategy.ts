@@ -1,7 +1,7 @@
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { passportJwtSecret, SigningKeyNotFoundError } from 'jwks-rsa';
+import { passportJwtSecret, SigningKeyNotFoundError } from '@xmlking/jwks-rsa';
 
 import { environment as env } from '@env-api/environment';
 import { IJwtToken } from '@dorm/models';

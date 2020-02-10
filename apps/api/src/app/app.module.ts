@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+
+import { AuthModule } from './auth';
+import { ControllerModule } from './controller/controller.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-
-import { ControllerModule } from './controller/controller.module';
 import {
   ModelsModule,
 } from './models';
@@ -15,7 +16,7 @@ import { AppHealthService } from './app-health.service';
 
 @Module({
   imports: [
-    // AuthModule,
+    AuthModule,
     CoreModule,
     SharedModule,
     ModelsModule,

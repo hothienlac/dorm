@@ -42,11 +42,11 @@ export const environment: IEnvironment = {
     database: databaseConfig,
 
     auth: {
-        clientId: 'ngxapi',
-        // issuerExternalUrl: 'https://keycloak.traefik.k8s/auth/realms/ngx',
-        issuerExternalUrl: 'http://localhost:8080/auth/realms/ngx',
-        // issuerExternalUrl: 'https://keycloak.kashmora.com/auth/realms/ngx',
-        // additionalQueryStringParams:  { scope: 'openid profile email', nonce: '1234578910' }
+        clientId: process.env.OIDC_CLIENT_ID || '791772336084-vkt37abstm1du92ofdmhgi30vgd7t0oa.apps.googleusercontent.com',
+        issuerExternalUrl: process.env.OIDC_ISSUER_EXTERNAL_URL || 'https://accounts.google.com',
+        issuerInternalUrl: process.env.OIDC_ISSUER_INTERNAL_URL || 'https://accounts.google.com',
+        jwksUri: process.env.OIDC_JWKS_URL || 'https://www.googleapis.com/oauth2/v3/certs',
+        additionalQueryStringParams: { scope: 'openid profile email' },
     },
 
     email: {

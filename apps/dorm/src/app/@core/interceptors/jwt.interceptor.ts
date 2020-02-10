@@ -17,7 +17,7 @@ export class JwtInterceptor implements HttpInterceptor {
   constructor(private store: Store, private oauthService: OAuthService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const accessToken = this.oauthService.getAccessToken();
+    const accessToken = this.oauthService.getIdToken();
     // const token = this.store.selectSnapshot<string>((state: AuthState) => state.auth.profile.token);
     const url = req.url.toLowerCase();
     const found = !!allowedUrls.find(u => url.startsWith(u));

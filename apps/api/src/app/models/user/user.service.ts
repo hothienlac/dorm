@@ -19,17 +19,15 @@ export class UserService extends CrudService<UserEntity> {
 		}
 
 	async getLoggedUserOrCreate(token: IJwtToken): Promise<UserEntity | InsertResult> {
-		const { email, preferred_username } = token;
+		const { email, name } = token;
 		// const user = await this.userRepository.findOne({email});
-		const user = await this.userRepository.findOne({ username: preferred_username });
+		const user = await this.userRepository.findOne({ username: name });
 		if (user) {
 		  return user;
 		} else {
 			const newUser = {
-				firstName: token.given_name,
-				lastName: token.family_name,
 				email: token.email,
-				username: token.preferred_username,
+				username: token.name,
 			};
 			return super.create(newUser);
 		}

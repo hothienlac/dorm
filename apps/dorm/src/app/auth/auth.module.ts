@@ -67,7 +67,14 @@ export class AuthModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AuthModule,
-      providers: [{ provide: APP_INITIALIZER, useFactory: initializeAuth, deps: [OAuthService, Store], multi: true }],
+      providers: [
+        {
+          provide: APP_INITIALIZER,
+          useFactory: initializeAuth,
+          deps: [OAuthService, Store],
+          multi: true,
+        },
+      ],
     };
   }
   // HINT: AuthHandler is injected here to initialize it as Module Run Block

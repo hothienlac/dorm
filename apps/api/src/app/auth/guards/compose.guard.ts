@@ -9,7 +9,8 @@ export class ComposeGuard implements CanActivate {
     private allowGuard: AllowGuard,
     private authGuard: AuthGuard,
     private roleGuard: RoleGuard
-  ) {}
+  ) {
+  }
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     return (
