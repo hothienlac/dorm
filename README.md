@@ -1,6 +1,6 @@
 # Dormitory management
 
-[![Tan Tao Univetsity](https://ttu.edu.vn/wp-content/uploads/2017/09/logo-ttuEN123.png)](http://ttu.edu.vn/)
+[![N|Solid](https://ttu.edu.vn/wp-content/uploads/2017/09/logo-ttuEN123.png)](http://ttu.edu.vn/)
 
 # Description
 
