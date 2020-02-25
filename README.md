@@ -1,6 +1,6 @@
 # Dormitory management
 
-[![N|Solid](https://ttu.edu.vn/wp-content/uploads/2017/09/logo-ttuEN123.png)](http://ttu.edu.vn/)
+![Image of Yaktocat](https://ttu.edu.vn/wp-content/uploads/2017/09/logo-ttuEN123.png)
 
 # Description
 
