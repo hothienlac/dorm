@@ -1,9 +1,8 @@
 # Dormitory management
-
-![Image of Yaktocat](https://ttu.edu.vn/wp-content/uploads/2017/09/logo-ttuEN123.png)
-
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 # Description
-
+The Program is to manage the dormitory by saving the student go-in/go-out history, so that parent and dormitory manager know the student, and notify via Facebook Messenger and Gmail.
+[TODO] add demo image
 # Introduction and Motivation
 We are student at Tan Tao University, school of engineering. Our University has a school for talented high school student. The high school student live in dormitory
 # Technology used
