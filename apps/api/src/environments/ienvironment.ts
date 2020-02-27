@@ -46,6 +46,8 @@ export interface IEnvironment {
       audience: string;
       [key: string]: string;
     }>;
+    GOOGLE_APPLICATION_CREDENTIALS?: string;
+    FACEBOOK_CONFIG?: string;
   };
 
   email: EmailModuleOptions;

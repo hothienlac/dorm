@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, HttpModule } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -13,20 +13,25 @@ import {
 import { WebsocketModule } from './websocket/websocket.module';
 import { TerminusModule } from '@nestjs/terminus';
 import { AppHealthService } from './app-health.service';
+import { MessengerService } from './facebook-messenger/messenger.service';
 
 @Module({
   imports: [
-    AuthModule,
-    CoreModule,
-    SharedModule,
-    ModelsModule,
-    WebsocketModule,
-    ControllerModule,
-    TerminusModule.forRootAsync({
-      useClass: AppHealthService,
-    }),
+    // AuthModule,
+    // CoreModule,
+    // SharedModule,
+    // ModelsModule,
+    // WebsocketModule,
+    // ControllerModule,
+    // TerminusModule.forRootAsync({
+    //   useClass: AppHealthService,
+    // }),
+    HttpModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    MessengerService,
+  ],
 })
 export class AppModule {}

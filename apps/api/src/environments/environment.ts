@@ -47,6 +47,11 @@ export const environment: IEnvironment = {
         issuerInternalUrl: process.env.OIDC_ISSUER_INTERNAL_URL || 'https://accounts.google.com',
         jwksUri: process.env.OIDC_JWKS_URL || 'https://www.googleapis.com/oauth2/v3/certs',
         additionalQueryStringParams: { scope: 'openid profile email' },
+
+        GOOGLE_APPLICATION_CREDENTIALS: 'google-service-account.json',
+        
+
+        FACEBOOK_CONFIG: 'facebook-config.json'
     },
 
     email: {
