@@ -17,15 +17,15 @@ import { MessengerService } from './facebook-messenger/messenger.service';
 
 @Module({
   imports: [
-    // AuthModule,
-    // CoreModule,
-    // SharedModule,
-    // ModelsModule,
-    // WebsocketModule,
-    // ControllerModule,
-    // TerminusModule.forRootAsync({
-    //   useClass: AppHealthService,
-    // }),
+    AuthModule,
+    CoreModule,
+    SharedModule,
+    ModelsModule,
+    WebsocketModule,
+    ControllerModule,
+    TerminusModule.forRootAsync({
+      useClass: AppHealthService,
+    }),
     HttpModule,
   ],
   controllers: [AppController],
