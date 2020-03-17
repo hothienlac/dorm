@@ -1,6 +1,6 @@
 <h1>Privacy Policy for Tan Tao University Dormitory</h1>
 
-<p>At Tan Tao University Dormitory Management System, accessible from dorm.ttu.edu.vn, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Tan Tao University Dormitory Management System and how we use it.</p>
+<p>At Tan Tao University Dormitory Management System, accessible from https://dorm.ttu.edu.vn, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Tan Tao University Dormitory Management System and how we use it.</p>
 
 <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 
