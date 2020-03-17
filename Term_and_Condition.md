@@ -2,7 +2,7 @@
 
 <p>Welcome to Tan Tao University Dormitory Management System!</p>
 
-<p>These terms and conditions outline the rules and regulations for the use of Tan Tao University Dormitory's Website, located at dorm.ttu.edu.vn.</p>
+<p>These terms and conditions outline the rules and regulations for the use of Tan Tao University Dormitory's Website, located at https://dorm.ttu.edu.vn.</p>
 
 <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use Tan Tao University Dormitory Management System if you do not agree to take all of the terms and conditions stated on this page. Our Terms and Conditions were created with the help of the <a href="https://www.termsandconditionsgenerator.com">Terms And Conditions Generator</a> and the <a href="https://www.privacypolicyonline.com/terms-conditions-generator/">Free Terms & Conditions Generator</a>.</p>
 
